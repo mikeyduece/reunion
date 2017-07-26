@@ -5,4 +5,8 @@ class Activity
     @name         = name
     @participants = {}
   end
+
+  def add_participant(name, price)
+    participants[name] = price
+  end
 end

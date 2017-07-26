@@ -22,4 +22,10 @@ class ActivityTest < Minitest::Test
     expected = {}
     assert_equal expected, activity.participants
   end
+
+  def test_it_can_add_participants
+    activity.add_participant("Jim", 20)
+    expected = {"Jim" => 20}
+    assert_equal expected, activity.participants
+  end
 end
