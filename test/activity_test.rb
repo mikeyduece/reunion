@@ -13,8 +13,13 @@ class ActivityTest < Minitest::Test
   def test_its_a_thing
     assert_instance_of Activity, activity
   end
-  
+
   def test_it_knows_its_activity_name
     assert_equal "Brunch", activity.name
+  end
+
+  def test_it_starts_with_an_empty_hash_of_participants
+    expected = {}
+    assert_equal expected, activity.participants
   end
 end
