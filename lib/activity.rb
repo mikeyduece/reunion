@@ -1,10 +1,10 @@
 class Activity
-  attr_reader :name, :participants, :owed
+  attr_reader :name, :participants
 
   def initialize(name=nil)
     @name         = name
     @participants = {}
-    @owed         = {}
+    @owed = {}
   end
 
   def add_participant(name, price)
@@ -18,4 +18,13 @@ class Activity
   def split
     total_cost / participants.keys.count
   end
+
+  def owed
+    participants.keys.map do |name|
+      @owed[name] = split - participants[name]
+    end
+    @owed
+  end
+
+
 end
