@@ -52,4 +52,19 @@ class ReunionTest < Minitest::Test
 
     assert_equal 200, reunion.total_cost
   end
+
+  def test_it_can_tell_who_owes_how_much
+    reunion    = Reunion.new("Denver")
+    activity_1 = Activity.new("Brunch")
+    activity_1.add_participant("Jim", 20)
+    activity_1.add_participant("Joe", 40)
+    reunion.add_activity(activity_1)
+    activity_2 = Activity.new("Drinks")
+    activity_2.add_participant("Jim", 60)
+    activity_2.add_participant("John", 80)
+    reunion.add_activity(activity_2)
+
+    expected = {"Jim"=> 20, "Joe"=> -10, "John"=> -10}
+    assert_equal expected, reunion.breakout
+  end
 end

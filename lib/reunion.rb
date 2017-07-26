@@ -4,6 +4,7 @@ class Reunion
   def initialize(name=nil)
     @name       = name
     @activities = []
+    @breakout   = {}
   end
 
   def add_activity(activity)
@@ -16,6 +17,12 @@ class Reunion
       sum += activity.total_cost
     end
     sum
+  end
+
+  def breakout
+    activities.map do |activity|
+      @breakout[activity.owed.keys] = activity.owed.values
+
   end
 
 end
