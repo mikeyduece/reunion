@@ -1,8 +1,8 @@
 class Reunion
-  attr_reader :city
+  attr_reader :name
 
-  def initialize(city=nil)
-    @city = city
+  def initialize(name=nil)
+    @name = name
 
   end
 end

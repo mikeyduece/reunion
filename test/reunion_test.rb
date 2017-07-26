@@ -9,4 +9,9 @@ class ReunionTest < Minitest::Test
     reunion = Reunion.new("Denver")
     assert_instance_of Reunion, reunion
   end
+
+  def test_it_knows_the_city_name
+    reunion = Reunion.new("Denver")
+    assert_equal "Denver", reunion.name
+  end
 end
