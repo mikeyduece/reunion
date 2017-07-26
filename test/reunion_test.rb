@@ -14,4 +14,9 @@ class ReunionTest < Minitest::Test
     reunion = Reunion.new("Denver")
     assert_equal "Denver", reunion.name
   end
+
+  def test_activities_is_empty_array_by_default
+    reunion = Reunion.new("Denver")
+    assert_equal [], reunion.activities
+  end
 end

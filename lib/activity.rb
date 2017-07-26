@@ -4,7 +4,7 @@ class Activity
   def initialize(name=nil)
     @name         = name
     @participants = {}
-    @owed = {}
+    @owed         = {}
   end
 
   def add_participant(name, price)
