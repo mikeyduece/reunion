@@ -10,4 +10,12 @@ class Reunion
     activities.push(activity)
   end
 
+  def total_cost
+    sum = 0
+    activities.map do |activity|
+      sum += activity.total_cost
+    end
+    sum
+  end
+
 end
