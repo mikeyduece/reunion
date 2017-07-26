@@ -47,10 +47,11 @@ class ActivityTest < Minitest::Test
     assert_equal expected, activity.participants
   end
 
-  def test_it_can_tell_who_owes_what
+  def test_it_can_tell_split_of_cost
     activity = Activity.new
     activity.add_participant("Jim", 20)
     activity.add_participant("Joe", 40)
     assert_equal 60, activity.total_cost
+    assert_equal 30, activity.split
   end
 end
