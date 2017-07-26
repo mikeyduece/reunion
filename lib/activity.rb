@@ -1,7 +1,7 @@
 class Activity
   attr_reader :name, :participants
 
-  def initialize(name)
+  def initialize(name=nil)
     @name         = name
     @participants = {}
   end

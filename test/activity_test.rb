@@ -7,7 +7,7 @@ class ActivityTest < Minitest::Test
   attr_reader :activity
 
   def setup
-    @activity = Activity.new("Brunch")
+    @activity = Activity.new
   end
 
   def test_its_a_thing
@@ -15,7 +15,13 @@ class ActivityTest < Minitest::Test
   end
 
   def test_it_knows_its_activity_name
+    activity = Activity.new("Brunch")
     assert_equal "Brunch", activity.name
+  end
+
+  def test_it_can_have_a_different_name
+    activity = Activity.new("Party")
+    assert_equal "Party", activity.name
   end
 
   def test_it_starts_with_an_empty_hash_of_participants
