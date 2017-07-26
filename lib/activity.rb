@@ -9,4 +9,8 @@ class Activity
   def add_participant(name, price)
     participants[name] = price
   end
+
+  def total_cost
+    participants.values.reduce(:+)
+  end
 end
